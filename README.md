@@ -11,7 +11,11 @@ assets/img/           Favicon and images
 
 Preview locally with `python3 -m http.server`, then open http://localhost:8000.
 
-## Before launch
+## Hosting
+Hosted on GitHub Pages from the `main` branch (repo root). `CNAME` sets the
+custom domain to webbsenterprises.com. Pushing to `main` updates the live site.
+
+## To do
 - Add GA4: uncomment the snippet in `<head>` and set your Measurement ID.
 - Add a testimonials section once real client quotes are ready (the previous layout is in git history).
-- Add `assets/img/og-image.jpg` (1200x630) as the social share image.
+- Build the About, Services, Results, Blog and Contact pages; the menu currently links to homepage sections.
