@@ -79,6 +79,57 @@
     reveals.forEach(function (el) { el.classList.add('in'); });
   }
 
+  /* ---------- Hero visual rotator ---------- */
+  (function () {
+    var rotator = document.querySelector('.rotator');
+    if (!rotator) return;
+    var slides = rotator.querySelectorAll('.slide');
+    var dots = rotator.querySelectorAll('.rot-dots button');
+    var pauseBtn = rotator.querySelector('.rot-pause');
+    var INTERVAL = 6000;
+    var current = 0, timer = null;
+    // Reduced-motion visitors start paused; they can still press play or pick a slide.
+    var userPaused = reduceMotion, hoverPaused = false;
+
+    function show(i) {
+      current = (i + slides.length) % slides.length;
+      slides.forEach(function (s, n) {
+        var on = n === current;
+        s.classList.toggle('is-active', on);
+        s.setAttribute('aria-hidden', String(!on));
+      });
+      dots.forEach(function (d, n) {
+        if (n === current) d.setAttribute('aria-current', 'true');
+        else d.removeAttribute('aria-current');
+      });
+    }
+    function schedule() {
+      clearInterval(timer);
+      if (!userPaused && !hoverPaused && !document.hidden) {
+        timer = setInterval(function () { show(current + 1); }, INTERVAL);
+      }
+    }
+    function setPaused(p) {
+      userPaused = p;
+      pauseBtn.classList.toggle('paused', p);
+      pauseBtn.setAttribute('aria-label', p ? 'Play slideshow' : 'Pause slideshow');
+      schedule();
+    }
+
+    dots.forEach(function (d, n) {
+      d.addEventListener('click', function () { show(n); schedule(); });
+    });
+    pauseBtn.addEventListener('click', function () { setPaused(!userPaused); });
+    rotator.addEventListener('mouseenter', function () { hoverPaused = true; schedule(); });
+    rotator.addEventListener('mouseleave', function () { hoverPaused = false; schedule(); });
+    rotator.addEventListener('focusin', function () { hoverPaused = true; schedule(); });
+    rotator.addEventListener('focusout', function () { hoverPaused = false; schedule(); });
+    document.addEventListener('visibilitychange', schedule);
+
+    show(0);
+    setPaused(userPaused);
+  })();
+
   /* ---------- Analytics hooks (GA4-ready) ---------- */
   document.addEventListener('click', function (e) {
     var el = e.target.closest('[data-track]');

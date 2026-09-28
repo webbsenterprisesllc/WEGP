@@ -157,29 +157,146 @@
           </ul>
         </div>
 
-        <div class="hero-visual" aria-hidden="true">
-          <div class="dash">
-            <div class="dash-head">
-              <span class="dash-dots"><i></i><i></i><i></i></span>
-              <span class="dash-title">Growth Pipeline</span>
-              <span class="dash-tag">Autopilot</span>
-            </div>
-            <div class="dash-chart">
-              <span style="--h:28%"></span><span style="--h:40%"></span><span style="--h:36%"></span><span style="--h:52%"></span>
-              <span style="--h:48%"></span><span style="--h:64%"></span><span style="--h:60%"></span><span style="--h:78%"></span>
-              <span style="--h:74%"></span><span style="--h:90%"></span>
-              <svg class="dash-line" viewBox="0 0 100 40" preserveAspectRatio="none"><path d="M0 34 L11 29 L22 30 L33 23 L44 24 L55 16 L66 17 L77 10 L88 11 L100 3"/></svg>
-            </div>
-            <ol class="dash-steps">
-              <li><svg class="ico" aria-hidden="true"><use href="#i-search"/></svg>Buyer intent signal captured</li>
-              <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Contact data verified</li>
-              <li><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg>LinkedIn profile matched</li>
-              <li><svg class="ico" aria-hidden="true"><use href="#i-db"/></svg>Synced to your CRM</li>
-              <li><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>Outreach drafted</li>
-            </ol>
+        <!-- Hero visual rotator: 7 slides, advances every 6s. To use a photo instead,
+             replace a slide's .dash card with <img class="slide-photo" src="..." alt="..."> -->
+        <div class="hero-visual rotator" role="region" aria-roledescription="carousel" aria-label="What we build">
+          <div class="slides">
+
+            <!-- 1. Buyer intent leads -->
+            <figure class="slide is-active" aria-roledescription="slide" aria-label="1 of 7: Buyer intent lead generation">
+              <div class="dash" aria-hidden="true">
+                <div class="dash-head"><span class="dash-dots"><i></i><i></i><i></i></span><span class="dash-title">Growth Pipeline</span><span class="dash-tag">Autopilot</span></div>
+                <div class="dash-chart">
+                  <span style="--h:28%"></span><span style="--h:40%"></span><span style="--h:36%"></span><span style="--h:52%"></span>
+                  <span style="--h:48%"></span><span style="--h:64%"></span><span style="--h:60%"></span><span style="--h:78%"></span>
+                  <span style="--h:74%"></span><span style="--h:90%"></span>
+                  <svg class="dash-line" viewBox="0 0 100 40" preserveAspectRatio="none"><path d="M0 34 L11 29 L22 30 L33 23 L44 24 L55 16 L66 17 L77 10 L88 11 L100 3"/></svg>
+                </div>
+                <ol class="dash-steps">
+                  <li><svg class="ico"><use href="#i-search"/></svg>Buyer intent signal captured</li>
+                  <li><svg class="ico"><use href="#i-check"/></svg>Contact data verified</li>
+                  <li><svg class="ico"><use href="#i-share"/></svg>LinkedIn profile matched</li>
+                  <li><svg class="ico"><use href="#i-db"/></svg>Synced to your CRM</li>
+                </ol>
+              </div>
+              <span class="float-chip" aria-hidden="true"><svg class="ico"><use href="#i-target"/></svg>High intent</span>
+              <figcaption><strong>Buyer Intent Leads</strong>Verified leads in your platform in under 30 days</figcaption>
+            </figure>
+
+            <!-- 2. Legacy App -->
+            <figure class="slide" aria-roledescription="slide" aria-label="2 of 7: Legacy Apps System">
+              <div class="dash" aria-hidden="true">
+                <div class="dash-head"><span class="dash-dots"><i></i><i></i><i></i></span><span class="dash-title">Your Legacy App</span><span class="dash-tag">AI-Powered</span></div>
+                <div class="phone">
+                  <div class="phone-bar"><span class="phone-avatar">YOU</span><span><b>Your Coaching AI</b><small>Online · 24/7</small></span></div>
+                  <p class="bubble me">How do I raise my prices without losing clients?</p>
+                  <p class="bubble ai">Start with the outcome your clients pay for. Here's the 3-step framework from my playbook…</p>
+                  <div class="unlock"><span>Full Playbook</span><b>Unlock · $49</b></div>
+                </div>
+              </div>
+              <span class="float-chip" aria-hidden="true"><svg class="ico"><use href="#i-spark"/></svg>Sells 24/7</span>
+              <figcaption><strong>Legacy Apps System</strong>Your expertise, turned into an AI product in 2 weeks</figcaption>
+            </figure>
+
+            <!-- 3. Revenue growth -->
+            <figure class="slide" aria-roledescription="slide" aria-label="3 of 7: Revenue growth">
+              <div class="dash" aria-hidden="true">
+                <div class="dash-head"><span class="dash-dots"><i></i><i></i><i></i></span><span class="dash-title">Revenue Growth</span><span class="dash-tag">Scaling</span></div>
+                <svg class="area" viewBox="0 0 300 150" preserveAspectRatio="none">
+                  <defs><linearGradient id="area-g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DBB241" stop-opacity=".55"/><stop offset="1" stop-color="#7B0118" stop-opacity="0"/></linearGradient></defs>
+                  <g class="area-grid"><path d="M0 37h300M0 75h300M0 112h300"/></g>
+                  <path class="area-fill" d="M0 135 C40 128 60 120 90 112 S150 96 180 78 S240 40 300 14 V150 H0Z" fill="url(#area-g)"/>
+                  <path class="area-line" d="M0 135 C40 128 60 120 90 112 S150 96 180 78 S240 40 300 14"/>
+                  <circle cx="300" cy="14" r="5" class="area-dot"/>
+                </svg>
+                <ul class="kpis">
+                  <li><span>Leads</span><b>▲</b></li>
+                  <li><span>Booked calls</span><b>▲</b></li>
+                  <li><span>Revenue</span><b>▲</b></li>
+                </ul>
+              </div>
+              <span class="float-chip" aria-hidden="true"><svg class="ico"><use href="#i-chart"/></svg>Compounding</span>
+              <figcaption><strong>Scale Revenue</strong>Systems built to compound month over month</figcaption>
+            </figure>
+
+            <!-- 4. AI search visibility -->
+            <figure class="slide" aria-roledescription="slide" aria-label="4 of 7: SEO, AEO and GEO">
+              <div class="dash" aria-hidden="true">
+                <div class="dash-head"><span class="dash-dots"><i></i><i></i><i></i></span><span class="dash-title">AI Search</span><span class="dash-tag">SEO · AEO · GEO</span></div>
+                <div class="search-box"><svg class="ico"><use href="#i-search"/></svg><span>Who is the best mortgage lender near me?</span></div>
+                <div class="ai-answer">
+                  <p class="ai-label"><svg class="ico"><use href="#i-spark"/></svg>AI Answer</p>
+                  <p>Based on reviews, expertise, and local results, a top recommendation is <mark>Your Business</mark>, known for fast approvals and…</p>
+                </div>
+                <ul class="results">
+                  <li><b>#1</b><span class="sk w80"></span></li>
+                  <li><b>#2</b><span class="sk w60"></span></li>
+                </ul>
+              </div>
+              <span class="float-chip" aria-hidden="true"><svg class="ico"><use href="#i-target"/></svg>Be the answer</span>
+              <figcaption><strong>SEO · AEO · GEO</strong>Found on Google, answer engines, and AI</figcaption>
+            </figure>
+
+            <!-- 5. Automation workflow -->
+            <figure class="slide" aria-roledescription="slide" aria-label="5 of 7: Automation marketing systems">
+              <div class="dash" aria-hidden="true">
+                <div class="dash-head"><span class="dash-dots"><i></i><i></i><i></i></span><span class="dash-title">Automation Workflow</span><span class="dash-tag">Go High Level</span></div>
+                <ol class="workflow">
+                  <li><span class="wf-ico"><svg class="ico"><use href="#i-target"/></svg></span><span><b>New lead arrives</b><small>Form, ad, or call</small></span></li>
+                  <li><span class="wf-ico"><svg class="ico"><use href="#i-spark"/></svg></span><span><b>AI qualifies</b><small>Scores intent instantly</small></span></li>
+                  <li><span class="wf-ico"><svg class="ico"><use href="#i-mail"/></svg></span><span><b>Text + email follow-up</b><small>Within 60 seconds</small></span></li>
+                  <li><span class="wf-ico gold"><svg class="ico"><use href="#i-check"/></svg></span><span><b>Call booked</b><small>On your calendar</small></span></li>
+                </ol>
+              </div>
+              <span class="float-chip" aria-hidden="true"><svg class="ico"><use href="#i-gear"/></svg>Hands-free</span>
+              <figcaption><strong>Automation Systems</strong>Follow-up and booking that run while you sleep</figcaption>
+            </figure>
+
+            <!-- 6. Local visibility & reputation -->
+            <figure class="slide" aria-roledescription="slide" aria-label="6 of 7: Google Business Profile and reputation">
+              <div class="dash" aria-hidden="true">
+                <div class="dash-head"><span class="dash-dots"><i></i><i></i><i></i></span><span class="dash-title">Local Map Pack</span><span class="dash-tag">Top 3</span></div>
+                <div class="map">
+                  <span class="pin p1"></span><span class="pin p2"></span><span class="pin main"><svg class="ico"><use href="#i-pin"/></svg></span>
+                </div>
+                <div class="biz">
+                  <div><b>Your Business</b><span class="stars-sm">★★★★★</span></div>
+                  <span class="sk w80 light"></span><span class="sk w60 light"></span>
+                  <div class="biz-actions"><span>Call</span><span>Directions</span><span>Website</span></div>
+                </div>
+              </div>
+              <span class="float-chip" aria-hidden="true"><svg class="ico"><use href="#i-star"/></svg>5-star reputation</span>
+              <figcaption><strong>Local Visibility</strong>Google Business Profile and reputation management</figcaption>
+            </figure>
+
+            <!-- 7. Automated webinar -->
+            <figure class="slide" aria-roledescription="slide" aria-label="7 of 7: Automated webinars for coaches and speakers">
+              <div class="dash" aria-hidden="true">
+                <div class="dash-head"><span class="dash-dots"><i></i><i></i><i></i></span><span class="dash-title">Evergreen Webinar</span><span class="dash-tag">Automated</span></div>
+                <div class="stage">
+                  <span class="spot"></span>
+                  <svg class="speaker" viewBox="0 0 100 100"><circle cx="50" cy="34" r="15"/><path d="M20 100c0-20 13-34 30-34s30 14 30 34z"/></svg>
+                  <span class="stage-tag"><i></i>Playing on demand</span>
+                </div>
+                <div class="attendees"><span class="av">A</span><span class="av">M</span><span class="av">J</span><span class="av">K</span><span class="av more">+</span><b>Register</b></div>
+              </div>
+              <span class="float-chip" aria-hidden="true"><svg class="ico"><use href="#i-mic"/></svg>Stage ready</span>
+              <figcaption><strong>Coaches &amp; Speakers</strong>Automated webinars, communities, and stages</figcaption>
+            </figure>
           </div>
-          <div class="float-chip chip-a"><svg class="ico" aria-hidden="true"><use href="#i-spark"/></svg>AI qualified</div>
-          <div class="float-chip chip-b"><svg class="ico" aria-hidden="true"><use href="#i-target"/></svg>High intent</div>
+
+          <div class="rotator-controls">
+            <button class="rot-pause" type="button" aria-label="Pause slideshow"><span class="i-pause" aria-hidden="true"></span></button>
+            <div class="rot-dots" role="group" aria-label="Choose slide">
+              <button type="button" aria-label="Slide 1" aria-current="true"></button>
+              <button type="button" aria-label="Slide 2"></button>
+              <button type="button" aria-label="Slide 3"></button>
+              <button type="button" aria-label="Slide 4"></button>
+              <button type="button" aria-label="Slide 5"></button>
+              <button type="button" aria-label="Slide 6"></button>
+              <button type="button" aria-label="Slide 7"></button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
