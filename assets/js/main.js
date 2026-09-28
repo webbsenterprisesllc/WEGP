@@ -14,6 +14,7 @@
   var header = document.querySelector('.site-header');
   function onScroll() {
     if (header) header.classList.toggle('scrolled', window.scrollY > 12);
+    if (nav && nav.classList.contains('open')) placeNav();
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
@@ -21,9 +22,15 @@
   /* ---------- Mobile navigation ---------- */
   var toggle = document.querySelector('.nav-toggle');
   var nav = document.getElementById('primary-nav');
+  // Keep the open mobile menu within the viewport; the header's bottom edge
+  // moves while the faith bar above it is still on screen.
+  function placeNav() {
+    nav.style.maxHeight = (window.innerHeight - header.getBoundingClientRect().bottom) + 'px';
+  }
   function setNav(open) {
     toggle.setAttribute('aria-expanded', String(open));
     nav.classList.toggle('open', open);
+    if (open) placeNav();
   }
   if (toggle && nav) {
     toggle.addEventListener('click', function () {
